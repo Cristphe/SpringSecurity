@@ -4,7 +4,8 @@
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
  
 # Feito de inicio uma inicialização onde tem 2 tipos de usuários diferentes.
-# Usuário: login: user 
-#          password: user123
-# Admin: login: admin
-#        password: master123
+
+* Solução encontrada para Spring Boot versão 3.2.3, WebSecurityConfig não está disponivel para esta versão
+porém utilizando o código da WebSecurityConfig está a solução encontrada!
+
+
