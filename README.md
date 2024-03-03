@@ -8,4 +8,6 @@
 * Solução encontrada para Spring Boot versão 3.2.3, WebSecurityConfig não está disponivel para esta versão
 porém utilizando o código da WebSecurityConfig está a solução encontrada!
 
+* Trocado anyRequest por requestMatchers no WebSecurityConfig, assim funcionando corretamente a página!
+
 
