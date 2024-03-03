@@ -10,4 +10,4 @@ porém utilizando o código da WebSecurityConfig está a solução encontrada!
 
 * Trocado anyRequest por requestMatchers no WebSecurityConfig, assim funcionando corretamente a página!
 
-
+* Adicionando JWT ao projeto, no momento ainda com alguns erros de exeução!
