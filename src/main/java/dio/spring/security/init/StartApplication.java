@@ -1,13 +1,6 @@
 package dio.spring.security.init;
 
-import dio.spring.security.model.User; // Importe sua classe de usuário personalizada
-import dio.spring.security.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
-
-@Component
+/*@Component
 public class StartApplication implements CommandLineRunner {
     @Autowired
     private UserRepository repository;
@@ -34,4 +27,4 @@ public class StartApplication implements CommandLineRunner {
             repository.save(user);
         }
     }
-}
+}*/
