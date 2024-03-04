@@ -13,5 +13,6 @@ porém utilizando o código da WebSecurityConfig está a solução encontrada!
 * Adicionando JWT ao projeto!
 * Obs.: No momento ainda com alguns erros de exeução!
 
-* Adicionado ProstGreSQL, modificações de registro e login de usuários. 
-* Obs.: registro em fase de desenvolviment!
+* Adicionado ProstGreSQL, modificações de registro e login de usuários.
+
+* Pode-se testar com o Postman (ou outros apps) com o metódo POST para validação de usuários!

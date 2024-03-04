@@ -1,10 +1,6 @@
 package dio.spring.security.security;
 
-import io.jsonwebtoken.*;
-
-import java.util.List;
-import java.util.stream.Collectors;
-
+/*
 public class JWTCreator {
     public static final String HEADER_AUTHORIZATION = "Authorization";
     public static final String ROLES_AUTHORITIES = "authorities";
@@ -31,4 +27,4 @@ public class JWTCreator {
     }
 
 
-}
+}*/
