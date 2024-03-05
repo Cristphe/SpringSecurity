@@ -1,9 +1,12 @@
 package dio.spring.security.controller;
 
+import org.springframework.security.core.userdetails.User;
 import dio.spring.security.config.AuthenticationDTO;
-import dio.spring.security.model.RegisterDTO;
-import dio.spring.security.model.User;
+import dio.spring.security.config.LoginResponseDTO;
+import dio.spring.security.config.RegisterDTO;
+/*import dio.spring.security.model.User;*/
 import dio.spring.security.repository.UserRepository;
+import dio.spring.security.security.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,12 +25,16 @@ public class WelcomeController {
     private AuthenticationManager authenticationManager;
     @Autowired
     private UserRepository repository;
+    @Autowired
+    private TokenService tokenService;
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody @Validated AuthenticationDTO data){
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
-        return ResponseEntity.ok().build();
+        var token = tokenService.generateToke((User) auth.getPrincipal());
+
+        return ResponseEntity.ok(new LoginResponseDTO(token));
     }
    @PostMapping("/register")
     public ResponseEntity register(@RequestBody @Validated RegisterDTO data){
@@ -37,6 +44,7 @@ public class WelcomeController {
         User newUser = new User(data.login(), encryptedPassword, data.role());
 
         this.repository.save(newUser);
+
         return ResponseEntity.ok().build();
    }
 }
