@@ -19,7 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class  User implements UserDetails  {
+public class UserAll implements UserDetails  {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
@@ -27,7 +27,7 @@ public class  User implements UserDetails  {
     private String password;
     private UserRole role;
 
-    public User(String login, String password, UserRole role){
+    public UserAll(String login, String password, UserRole role){
         this.login = login;
         this.password = password;
         this.role = role;

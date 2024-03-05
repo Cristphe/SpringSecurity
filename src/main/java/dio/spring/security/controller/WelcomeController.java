@@ -1,10 +1,9 @@
 package dio.spring.security.controller;
 
-import org.springframework.security.core.userdetails.User;
 import dio.spring.security.config.AuthenticationDTO;
 import dio.spring.security.config.LoginResponseDTO;
 import dio.spring.security.config.RegisterDTO;
-/*import dio.spring.security.model.User;*/
+import dio.spring.security.model.UserAll;
 import dio.spring.security.repository.UserRepository;
 import dio.spring.security.security.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,7 @@ public class WelcomeController {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
-        var token = tokenService.generateToke((User) auth.getPrincipal());
+        var token = tokenService.generateToke((UserAll)auth.getPrincipal());
 
         return ResponseEntity.ok(new LoginResponseDTO(token));
     }
@@ -41,9 +40,9 @@ public class WelcomeController {
         if(this.repository.findByLogin(data.login()) != null) return ResponseEntity.badRequest().build();
 
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
-        User newUser = new User(data.login(), encryptedPassword, data.role());
+        UserAll newUserAll = new UserAll(data.login(), encryptedPassword, data.role());
 
-        this.repository.save(newUser);
+        this.repository.save(newUserAll);
 
         return ResponseEntity.ok().build();
    }

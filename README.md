@@ -11,7 +11,8 @@ porém utilizando o código da WebSecurityConfig está a solução encontrada!
 * Trocado anyRequest por requestMatchers no WebSecurityConfig, assim funcionando corretamente a página!
 
 * Adicionando JWT ao projeto!
-* Obs.: No momento ainda com alguns erros de exeução!
+* Obs.: Geração de token ok!
+* Obs.: Validação de token sendo resolvido!
 
 * Adicionado ProstGreSQL, modificações de registro e login de usuários.
 
